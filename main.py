@@ -148,9 +148,21 @@ def upload():
 
     data['New_grade'] = data['grade'].apply(Grade1)
 
-    dept = pd.get_dummies(data["department"])
-    dept = dept.replace({False : 0 ,True : 1})
-    data= pd.concat([data, dept], axis = 1)
+    dept_list = ['AEL Support Service', 'Administration', 'Analytics', 'Business Excellence', 'Business Head Office',
+                    'CEO Office', 'Contract Administration','Corporate Social\xa0Responsibility', 'Engineering Resource Center',
+                    'Engineering Services', 'Environment', 'Estimation', 'Finance & Accounts', 'HSE', 'Health Services',
+                    'Human Resources', 'Information Technology', 'Land Acquisition & CSR', 'Land Acquisition and R&R',
+                    'Legal', 'Logistics', 'Mine Operation', 'Mine Planning', 'Mineral Resources & Exploration', 'Operations',
+                    'Operations & Maintenance - Railways', 'Operations & Technology', 'PRMC', 'Projects', 'Proposal & Estimation',
+                    'Quality Assurance & Control', 'Railway Services', 'Safety', 'Security', 'Strategy &  business development',
+                    'Sustainability & compliances', 'Techno Commercial', 'Technology']
+    
+    for i in dept_list:
+        data[i] = 0
+
+    for index, row in df.iterrows():
+        department = row['department']
+        df.at[index, department] = 1  
 
     columns_to_drop = ['gender', 'marital_status', 'job_location', 'employee_code', 'employee_number', 'employee_count', 'domicile_state', 'department', 'stay/left', 'grade', 'over18']
     data1 = data.drop(columns=columns_to_drop,errors='ignore')
