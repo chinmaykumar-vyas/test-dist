@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Survey</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Employee Survey</h1>
+        <form action="/submit" method="POST" class="mt-5">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="employee_code">Employee Code</label>
+                    <input type="text" class="form-control" id="employee_code" maxlength=8 pattern="[0-9]*" name="employee_code" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="age">Age</label>
+                    <input type="number" class="form-control" id="age" min=20 max=60 name="age" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="gender">Gender</label>
+                    <select class="form-control" id="gender" name="gender" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="marital_status">Marital Status</label>
+                    <select class="form-control" id="marital_status" name="marital_status" required>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="job_location">Job Location</label>
+                    <select class="form-control" id="job_location" name="job_location" required>
+                        <option value="Corporate">Corporate</option>
+                        <option value="Site">Site</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="domicile_state">Domicile State</label>
+                    <select class="form-control" id="domicile_state" name="domicile_state" required>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chattisgarh">Chattisgarh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="New Delhi">New Delhi</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="West Bengal">West Bengal</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="department">Department</label>
+                    <select class="form-control" id="department" name="department" required>
+                        <option value="Administration">Administration</option>
+                        <option value="AEL Support staff">AEL Support staff</option>
+                        <option value="Analytics">Analytics</option>
+                        <option value="Business Excellence">Business Excellence</option>
+                        <option value="Business Head Office">Business Head Office</option>
+                        <option value="CEO Office">CEO Office</option>
+                        <option value="Contract Administration">Contract Administration</option>
+                        <option value="Corporate Social\xa0Responsibility">Corporate Social Responsibility</option>
+                        <option value="Engineering Resource Center">Engineering Resource Center</option>
+                        <option value="Engineering Services">Engineering Services</option>
+                        <option value="Environment">Environment</option>
+                        <option value="Estimation">Estimation</option>
+                        <option value="Finance & Accounts">Finance & Accounts</option>
+                        <option value="Health Services">Health Services</option>
+                        <option value="HSE">HSE</option>
+                        <option value="Human Resource">Human Resource</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Land Acquisition & CSR">Land Acquisition & CSR</option>
+                        <option value="Land Acquisition & R&R">Land Acquisition & R&R</option>
+                        <option value="Legal">Legal</option>
+                        <option value="Logistics">Logistics</option>
+                        <option value="Mine Operation">Mine Operation</option>
+                        <option value="Mine Planning">Mine Planning</option>
+                        <option value="Mineral Resources & Exploration">Mineral Resources & Exploration</option>
+                        <option value="Operations">Operations</option>
+                        <option value="Operations & Maintenance - Railways">Operations & Maintenance - Railways</option>
+                        <option value="Operations & Technology">Operations & Technology</option>
+                        <option value="PRMC">PRMC</option>
+                        <option value="Projects">Projects</option>
+                        <option value="Proposal & Estimation">Proposal & Estimation</option>
+                        <option value="Quality Assurance & Control">Quality Assurance & Control</option>
+                        <option value="Railway Services">Railway Services</option>
+                        <option value="Safety">Safety</option>
+                        <option value="Security">Security</option>
+                        <option value="Strategy & business development">Strategy & business development</option>
+                        <option value="Sustainability & compliances">Sustainability & compliances</option>
+                        <option value="Techno Commercial">Techno Commercial</option>
+                        <option value="Technology">Technology</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="grade">Grade</label>
+                    <select class="form-control" id="grade" name="grade" required>
+                        <option value="O1">O1</option>
+                        <option value="O2">O2</option>
+                        <option value="O3">O3</option>
+                        <option value="O4">O4</option>
+                        <option value="O5">O5</option>
+                        <option value="E1">E1</option>
+                        <option value="E2">E2</option>
+                        <option value="E3">E3</option>
+                        <option value="E4">E4</option>
+                        <option value="GM">GM</option>
+                        <option value="AP">AP</option>
+                        <option value="VP">VP</option>
+                        <option value="SP">SP</option>
+                        <option value="JP">JP</option>
+                        <option value="PR">PR</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="education">Education</label>
+                    <select class="form-control" id="education" name="education" required>
+                        <option value="Diploma">Diploma</option>
+                        <option value="Bachelors">Bachelors</option>
+                        <option value="Masters">Masters</option>
+                        <option value="PhD">PhD</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="compa_ratio">Compensation Ratio</label>
+                    <input type="number" class="form-control" id="compa_ratio" min=0 value=0 name="compa_ratio" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="job_level">Job Level</label>
+                    <input type="number" class="form-control" id="job_level" value=1 min=1 max=5 name="job_level" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="pms_1">PMS 1</label>
+                    <select class="form-control" id="pms_1" name="pms_1" required>
+                        <option value="TP">TP</option>
+                        <option value="GP">GP</option>
+                        <option value="SP">SP</option>
+                        <option value="IP">IP</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="pms_2">PMS 2</label>
+                    <select class="form-control" id="pms_2" name="pms_2" required>
+                        <option value="TP">TP</option>
+                        <option value="GP">GP</option>
+                        <option value="SP">SP</option>
+                        <option value="IP">IP</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="pms_3">PMS 3</label>
+                    <select class="form-control" id="pms_3" name="pms_3" required>
+                        <option value="TP">TP</option>
+                        <option value="GP">GP</option>
+                        <option value="SP">SP</option>
+                        <option value="IP">IP</option>
+                    </select>
+                </div>
+                
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="adani_exp">Adani Exp</label>
+                    <input type="number" class="form-control" id="adani_exp" value=0 min=0 name="adani_exp" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="previous_exp">Previous Exp</label>
+                    <input type="number" class="form-control" id="previous_exp" value=0 min=0 name="previous_exp" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="total_exp">Total Exp</label>
+                    <input type="number" class="form-control" id="total_exp" value=0 min=0 name="total_exp" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="job_clarity">Job Clarity</label>
+                    <input type="number" class="form-control" id="job_clarity" value=1 min=1 max=5 name="job_clarity" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="rewards_recognition">Rewards Recognition</label>
+                    <input type="number" class="form-control" id="rewards_recognition" value=1 min=1 max=5 name="rewards_recognition" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="l_d">L&D</label>
+                    <input type="number" class="form-control" id="l_d" name="l_d" value=1 min=1 max=5 required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="welfare_facilities">Welfare Facilities</label>
+                    <input type="number" class="form-control" id="welfare_facilities" value=1 min=1 max=5 name="welfare_facilities" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="job_satisfaction">Job Satisfaction</label>
+                    <input type="number" class="form-control" id="job_satisfaction" value=1 min=1 max=5 name="job_satisfaction" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="company_culture1">Company Culture 1</label>
+                    <input type="number" class="form-control" id="company_culture1" value=1 min=1 max=5 name="company_culture1" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="over18">Over 18</label>
+                    <select class="form-control" id="over18" name="over18" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="employee_empowerment">Employee Empowerment</label>
+                    <input type="number" class="form-control" id="employee_empowerment" value=1 min=1 max=5 name="employee_empowerment" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="empowerment">Empowerment</label>
+                    <input type="number" class="form-control" id="empowerment" value=1 min=1 max=5 name="empowerment" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="company_culture2">Company Culture 2</label>
+                    <input type="number" class="form-control" id="company_culture2" value=1 min=1 max=5 name="company_culture2" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="communication">Communication</label>
+                    <input type="number" class="form-control" id="communication" value=1 min=1 max=5 name="communication" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="transparency">Transparency</label>
+                    <input type="number" class="form-control" id="transparency" value=1 min=1 max=5 name="transparency" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="workplace_wellbeing">Workplace Wellbeing</label>
+                    <input type="number" class="form-control" id="workplace_wellbeing" value=1 min=1 max=5 name="workplace_wellbeing" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="employee_wellness">Employee Wellness</label>
+                    <input type="number" class="form-control" id="employee_wellness" value=1 min=1 max=5 name="employee_wellness" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="employee_integrity">Employee Integrity</label>
+                    <input type="number" class="form-control" id="employee_integrity" value=1 min=1 max=5 name="employee_integrity" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="wlb1">WLB 1</label>
+                    <input type="number" class="form-control" id="wlb1" value=1 min=1 max=5 name="wlb1" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="wlb2">WLB 2</label>
+                    <input type="number" class="form-control" id="wlb2" value=1 min=1 max=5 name="wlb2" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="wlb3">WLB 3</label>
+                    <input type="number" class="form-control" id="wlb3" value=1 min=1 max=5 name="wlb3" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="pattern_of_communication">Pattern of Communication</label>
+                    <input type="number" class="form-control" id="pattern_of_communication" value=1 min=1 max=5 name="pattern_of_communication" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="team">Team</label>
+                    <input type="number" class="form-control" id="team" value=1 min=1 max=5 name="team" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="compensation">Compensation</label>
+                    <input type="number" class="form-control" id="compensation" value=1 min=1 max=5 name="compensation" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Output</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card shadow rounded-lg">
+                    <div class="card-body text-center">
+                        <h1 class="card-title">Prediction</h1>
+                        <p class="card-text">{{ result }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+    .card {
+        background-color: #F8FAFC;
+        border-color: #E2E8F0;
+    }
+    .card:hover {
+        transform: scale(1.05);
+        transition: all 0.3s ease;
+    }
+    </style>
+</body>
+</html>
