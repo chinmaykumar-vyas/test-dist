@@ -1,4 +1,5 @@
 import os
+import random
 import joblib
 import pandas as pd
 import numpy as np
@@ -160,9 +161,9 @@ def upload():
     for i in dept_list:
         data[i] = 0
 
-    for index, row in df.iterrows():
+    for index, row in data.iterrows():
         department = row['department']
-        df.at[index, department] = 1  
+        data.at[index, department] = 1  
 
     columns_to_drop = ['gender', 'marital_status', 'job_location', 'employee_code', 'employee_number', 'employee_count', 'domicile_state', 'department', 'stay/left', 'grade', 'over18']
     data1 = data.drop(columns=columns_to_drop,errors='ignore')
